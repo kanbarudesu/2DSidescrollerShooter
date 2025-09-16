@@ -1,0 +1,17 @@
+{
+    "name": "Kanbarudesu.Audio",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9a3678ddd3ccb5845b4ec596068583db",
+        "GUID:2eb6cadb038ce6a45852ce2099c64146"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
