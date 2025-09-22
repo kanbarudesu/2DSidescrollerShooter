@@ -20,6 +20,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3658bef0272445745ad705036b61490a
+    m_Address: Assets/Prefabs/Weapons/Grenade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e5f926e9b9c19246836ad07bd07ed50
+    m_Address: Assets/Prefabs/Weapons/LaserWeapon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5028b811590e8d840843391cc149921b
+    m_Address: Assets/Prefabs/Weapons/GrenadeWeapon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 689ba190780516d42ac72ab9b842cc4e
     m_Address: Assets/Prefabs/Enemy/CloseRangeEnemy
     m_ReadOnly: 0
@@ -27,6 +42,26 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 895a29526b09d6b4fb7182c5f903a39d
     m_Address: Assets/Prefabs/Enemy/RangedEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 900a2374c3e509746b35f541f5890740
+    m_Address: Assets/Prefabs/Weapons/Shotgun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bae35e49d3381ec4481e92554885ab12
+    m_Address: Assets/Prefabs/Weapons/Projectile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c91b2c1332072054f88edfc43a0c4284
+    m_Address: Assets/Prefabs/Weapons/Flamethrower
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6467961b55e69946a87a51234d49e35
+    m_Address: Assets/Prefabs/Weapons/Pistol
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

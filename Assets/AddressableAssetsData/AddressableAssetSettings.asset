@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: c9faa6fb72114f64bab046d3d0db3e47
   m_currentHash:
     serializedVersion: 2
-    Hash: fe8f721338dfeb202924af418451fda5
+    Hash: 35e13051a7ce1c9c0a73613afd8b636e
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_CatalogRequestsTimeout: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
       - m_Id: 2f06e99f9997e4c40acbf97a5b020306
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: 475c47c0f1351804cad2c009a2e5d706
-        m_Value: https://drive.google.com/uc?export=download&id=1pZrCmkZHm2YS_stxKvbrx-ajgyX5zdSe
+        m_Value: 'https://kanbarudesu.github.io/2DSidescrollerShooter//ServerData/[BuildTarget]'
       - m_Id: 636cb6f439de9e34986b5dc7529176c8
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
     m_ProfileEntryNames:
