@@ -3,13 +3,16 @@ using System.Collections;
 using UnityEngine.Events;
 using ImprovedTimers;
 using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class EnemyWaveSpawner : MonoBehaviour
 {
     [System.Serializable]
     public struct WaveData
     {
-        public GameObject[] EnemyPrefabs;
+        [Tooltip("Addressable enemy prefab references")]
+        public AssetReferenceGameObject[] EnemyAddresses;
         public int SpawnCount;
         public float SpawnInterval;
         public bool SpawnRandomly;
@@ -56,7 +59,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         for (int w = 0; w < waveAmount; w++)
         {
-            int waveIndex = UnityEngine.Random.Range(0, waves.Length);
+            int waveIndex = Random.Range(0, waves.Length);
 
             yield return StartCoroutine(SpawnWave(waves[waveIndex]));
             yield return new WaitForSeconds(waveInterval);
@@ -68,29 +71,45 @@ public class EnemyWaveSpawner : MonoBehaviour
         EnemyCount += wave.SpawnCount;
         for (int i = 0; i < wave.SpawnCount; i++)
         {
-            SpawnEnemy(wave);
+            yield return SpawnEnemy(wave);
             yield return new WaitForSeconds(wave.SpawnInterval);
         }
     }
 
-    private void SpawnEnemy(WaveData wave)
+    private IEnumerator SpawnEnemy(WaveData wave)
     {
-        if (wave.EnemyPrefabs == null || wave.EnemyPrefabs.Length == 0) return;
+        if (wave.EnemyAddresses == null || wave.EnemyAddresses.Length == 0) yield break;
 
-        GameObject prefab = wave.EnemyPrefabs[UnityEngine.Random.Range(0, wave.EnemyPrefabs.Length)];
+        AssetReferenceGameObject enemyRef =
+            wave.EnemyAddresses[Random.Range(0, wave.EnemyAddresses.Length)];
         Vector2 spawnPos = wave.SpawnRandomly ? GetRandomSpawnPosition() : GetSpawnPosition();
-        var enemy = Instantiate(prefab, spawnPos, Quaternion.identity);
-        ActiveEnemies.Add(enemy);
-        if (enemy.TryGetComponent(out Health health))
+
+        var handle = enemyRef.InstantiateAsync(spawnPos, Quaternion.identity);
+        yield return handle;
+
+        if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            health.OnDie.AddListener(OnEnemyDied);
+            GameObject enemy = handle.Result;
+            ActiveEnemies.Add(enemy);
+
+            if (enemy.TryGetComponent(out Health health))
+            {
+                health.OnDie.AddListener((deadEnemy) => OnEnemyDied(deadEnemy, enemyRef));
+            }
+        }
+        else
+        {
+            Debug.LogError($"Failed to load enemy: {enemyRef.RuntimeKey}");
         }
     }
 
-    private void OnEnemyDied(GameObject enemy)
+    private void OnEnemyDied(GameObject enemy, AssetReferenceGameObject enemyRef)
     {
         EnemyCount--;
         ActiveEnemies.Remove(enemy);
+
+        Addressables.ReleaseInstance(enemy);
+
         if (EnemyCount <= 0)
         {
             waveCleartimer.Start();
@@ -103,15 +122,14 @@ public class EnemyWaveSpawner : MonoBehaviour
         float camHeight = 2f * mainCamera.orthographicSize;
         float camWidth = camHeight * mainCamera.aspect;
 
-        float x = (UnityEngine.Random.value < 0.5f) ? camPos.x - camWidth / 2f - 1f : camPos.x + camWidth / 2f + 1f;
+        float x = (Random.value < 0.5f) ? camPos.x - camWidth / 2f - 1f : camPos.x + camWidth / 2f + 1f;
 
         Bounds groundBounds = groundArea.bounds;
         float yMin = groundBounds.min.y;
         float yMax = groundBounds.max.y;
-        float y = UnityEngine.Random.Range(yMin, yMax);
+        float y = Random.Range(yMin, yMax);
 
-        y = Mathf.Clamp(y, yMin, yMax);
-        return new Vector2(x, y);
+        return new Vector2(x, Mathf.Clamp(y, yMin, yMax));
     }
 
     private Vector2 GetRandomSpawnPosition()
@@ -120,8 +138,8 @@ public class EnemyWaveSpawner : MonoBehaviour
         Vector2 size = box.size;
         Vector2 center = box.offset;
         Vector2 randomPoint = new Vector2(
-            UnityEngine.Random.Range(-size.x / 2f, size.x / 2f),
-            UnityEngine.Random.Range(-size.y / 2f, size.y / 2f)
+            Random.Range(-size.x / 2f, size.x / 2f),
+            Random.Range(-size.y / 2f, size.y / 2f)
         );
         return box.transform.TransformPoint(center + randomPoint);
     }

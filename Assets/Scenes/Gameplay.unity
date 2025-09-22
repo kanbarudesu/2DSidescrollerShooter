@@ -1155,40 +1155,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - EnemyPrefabs:
-    - {fileID: 9196207516647363743, guid: 0cc99b65d076c75449b3c88f53ef9fd3, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 0cc99b65d076c75449b3c88f53ef9fd3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 12
     SpawnInterval: 0.5
     SpawnRandomly: 0
-  - EnemyPrefabs:
-    - {fileID: 1859401454594917673, guid: 689ba190780516d42ac72ab9b842cc4e, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 3
     SpawnInterval: 0.2
     SpawnRandomly: 0
-  - EnemyPrefabs:
-    - {fileID: 4237525536372344257, guid: 895a29526b09d6b4fb7182c5f903a39d, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 3
     SpawnInterval: 0.2
     SpawnRandomly: 0
-  - EnemyPrefabs:
-    - {fileID: 4237525536372344257, guid: 895a29526b09d6b4fb7182c5f903a39d, type: 3}
-    - {fileID: 1859401454594917673, guid: 689ba190780516d42ac72ab9b842cc4e, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 4
     SpawnInterval: 0.2
     SpawnRandomly: 0
-  - EnemyPrefabs:
-    - {fileID: 1859401454594917673, guid: 689ba190780516d42ac72ab9b842cc4e, type: 3}
-    - {fileID: 4237525536372344257, guid: 895a29526b09d6b4fb7182c5f903a39d, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 6
     SpawnInterval: 0.2
     SpawnRandomly: 1
-  - EnemyPrefabs:
-    - {fileID: 1859401454594917673, guid: 689ba190780516d42ac72ab9b842cc4e, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 6
     SpawnInterval: 0.2
     SpawnRandomly: 1
-  - EnemyPrefabs:
-    - {fileID: 4237525536372344257, guid: 895a29526b09d6b4fb7182c5f903a39d, type: 3}
+  - EnemyAddresses:
+    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     SpawnCount: 6
     SpawnInterval: 0.2
     SpawnRandomly: 1
