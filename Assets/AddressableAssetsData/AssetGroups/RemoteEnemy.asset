@@ -21,6 +21,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - GameplayAssets
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1767ad46ed73fbf4da59021ec1be2d85
+    m_Address: Assets/Prefabs/EnemyWeapon/Enemy Grenade Weapon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c115c91d845c004fae91ba23d844a51
+    m_Address: Assets/Prefabs/EnemyWeapon/EnemyProjectile.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3658bef0272445745ad705036b61490a
     m_Address: Assets/Prefabs/Weapons/Grenade
     m_ReadOnly: 0
@@ -57,6 +69,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - GameplayAssets
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b9a78df054a3144d8d4aec44fe5e7b5
+    m_Address: Assets/Prefabs/EnemyWeapon/Enemy pistol.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e59c0e0adcef66469101e1bdf29f28b
+    m_Address: Assets/Prefabs/EnemyWeapon/EnemyShotgun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bae35e49d3381ec4481e92554885ab12
     m_Address: Assets/Prefabs/Weapons/Projectile
     m_ReadOnly: 0
@@ -71,6 +95,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d6467961b55e69946a87a51234d49e35
     m_Address: Assets/Prefabs/Weapons/Pistol
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5cb42b1e290b3f48992a1d594d52ef7
+    m_Address: Assets/Prefabs/EnemyWeapon/Enemy Grenade.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - GameplayAssets

@@ -3072,7 +3072,6 @@ GameObject:
   - component: {fileID: 403568815}
   - component: {fileID: 403568817}
   - component: {fileID: 403568816}
-  - component: {fileID: 403568818}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -3139,61 +3138,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403568814}
   m_CullTransparentMesh: 1
---- !u!114 &403568818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403568814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a9e3f34075ce74788e0344e6dff327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - Prefab: {fileID: 4888892786852421185, guid: d6467961b55e69946a87a51234d49e35, type: 3}
-    Icon: {fileID: -7919881095202910414, guid: 97cfc5948fcf9b2499fe916e3fb78b04, type: 3}
-    Price: 15
-    Description: Basic Pistol that deals 15 damage per bullet.
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab: {fileID: 4183041779865877031, guid: 5028b811590e8d840843391cc149921b, type: 3}
-    Icon: {fileID: -4483239912571855695, guid: fc2acf28e0c3e5b4f87441506861a277, type: 3}
-    Price: 50
-    Description: Grenade that deals 25 AoE damage to the enemies.
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab: {fileID: 7453956891877381263, guid: 900a2374c3e509746b35f541f5890740, type: 3}
-    Icon: {fileID: -6822918150057805834, guid: 6df6e2e6d8577214cb6ab10b6c34f515, type: 3}
-    Price: 100
-    Description: Shotgun that shoot multiple bullet that deals 6 damage each.
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab: {fileID: 9137443439808853504, guid: 4e5f926e9b9c19246836ad07bd07ed50, type: 3}
-    Icon: {fileID: -9135456038254525102, guid: 34455fbb89df0e246b8238c5e35fa712, type: 3}
-    Price: 150
-    Description: ' Sniper rifle. Hold right click to deals 25 damage/s in straight
-      line. Consume 2 ammo/s.'
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab: {fileID: 1214397365514932313, guid: c91b2c1332072054f88edfc43a0c4284, type: 3}
-    Icon: {fileID: -8271022828304907124, guid: 0e5f5adfa6606ff468ba3dd6d42b1395, type: 3}
-    Price: 150
-    Description: Flamethrower. Hold right click to deals 15 damage/s in cone shape.
-      consume 3 ammo/s
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab: {fileID: 0}
-    Icon: {fileID: -8690472570865122384, guid: 3dc5263f931b2f9409e49a06890b47b1, type: 3}
-    Price: 5
-    Description: Add 5 Ammo to current weapon.
-    isAmmo: 1
-    AmmoAmount: 5
-  shopItemPrefab: {fileID: 8807214391999047611, guid: 8bc4c99712142b74ca32dd1c9abe622e, type: 3}
-  shopPanel: {fileID: 403568814}
-  content: {fileID: 1900946946}
-  playerWeaponHandler: {fileID: 1143242506}
 --- !u!1 &405421265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3281,7 @@ MonoBehaviour:
   rightEnemyIndicator: {fileID: 1575912779}
   pauseButton: {fileID: 1355102211}
   resumeButton: {fileID: 1342988460}
+  mainMenuButton: {fileID: 1397861759}
   quitButton: {fileID: 1510574480}
   highestWaveText: {fileID: 627194787}
   currentWaveText: {fileID: 771514345}
@@ -5918,7 +5863,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 403568818}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SimpleShop, Assembly-CSharp
         m_MethodName: CloseShop
         m_Mode: 1
@@ -7044,6 +6989,142 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &845231972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845231973}
+  - component: {fileID: 845231975}
+  - component: {fileID: 845231974}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &845231973
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845231972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1397861758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &845231974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845231972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Main Menu
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: b8889036353b7914eafe0870c262a3fc, type: 2}
+  m_sharedMaterial: {fileID: 877572336021636690, guid: b8889036353b7914eafe0870c262a3fc, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &845231975
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845231972}
+  m_CullTransparentMesh: 1
 --- !u!1 &846062843
 GameObject:
   m_ObjectHideFlags: 0
@@ -10250,7 +10331,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea114be605fe53941997bd3224e11cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialWeaponPrefab: {fileID: 4888892786852421185, guid: d6467961b55e69946a87a51234d49e35, type: 3}
+  initialWeaponPrefab:
+    m_AssetGUID: d6467961b55e69946a87a51234d49e35
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   weaponHolder: {fileID: 1822023586}
 --- !u!58 &1143242507
 CircleCollider2D:
@@ -11356,7 +11442,7 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 403568818}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SimpleShop, Assembly-CSharp
         m_MethodName: OpenShop
         m_Mode: 1
@@ -12891,6 +12977,127 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1397861757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397861758}
+  - component: {fileID: 1397861761}
+  - component: {fileID: 1397861760}
+  - component: {fileID: 1397861759}
+  m_Layer: 5
+  m_Name: MainMenuButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1397861758
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397861757}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 845231973}
+  m_Father: {fileID: 1727771193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -180}
+  m_SizeDelta: {x: 300, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1397861759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397861757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1397861760}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1397861760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397861757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1397861761
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397861757}
+  m_CullTransparentMesh: 1
 --- !u!1 &1403325475
 GameObject:
   m_ObjectHideFlags: 0
@@ -16374,6 +16581,7 @@ RectTransform:
   m_Children:
   - {fileID: 1342988459}
   - {fileID: 2055698817}
+  - {fileID: 1397861758}
   - {fileID: 1510574479}
   - {fileID: 366184212}
   - {fileID: 749000070}
@@ -16959,11 +17167,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a9e3f34075ce74788e0344e6dff327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  shopItemPrefab: {fileID: 0}
-  shopPanel: {fileID: 0}
-  content: {fileID: 0}
-  playerWeaponHandler: {fileID: 0}
+  items:
+  - Prefab:
+      m_AssetGUID: d6467961b55e69946a87a51234d49e35
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -7919881095202910414, guid: 97cfc5948fcf9b2499fe916e3fb78b04, type: 3}
+    Price: 15
+    Description: Basic Pistol that deals 15 damage per bullet.
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: 5028b811590e8d840843391cc149921b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -4483239912571855695, guid: fc2acf28e0c3e5b4f87441506861a277, type: 3}
+    Price: 50
+    Description: Grenade that deals 25 AoE damage to the enemies.
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: 900a2374c3e509746b35f541f5890740
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -6822918150057805834, guid: 6df6e2e6d8577214cb6ab10b6c34f515, type: 3}
+    Price: 100
+    Description: Shotgun that shoot multiple bullet that deals 6 damage each.
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: 4e5f926e9b9c19246836ad07bd07ed50
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -9135456038254525102, guid: 34455fbb89df0e246b8238c5e35fa712, type: 3}
+    Price: 150
+    Description: ' Sniper rifle. Hold right click to deals 25 damage/s in straight
+      line. Consume 2 ammo/s.'
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: c91b2c1332072054f88edfc43a0c4284
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -8271022828304907124, guid: 0e5f5adfa6606ff468ba3dd6d42b1395, type: 3}
+    Price: 150
+    Description: Flamethrower. Hold right click to deals 15 damage/s in cone shape.
+      consume 3 ammo/s
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -8690472570865122384, guid: 3dc5263f931b2f9409e49a06890b47b1, type: 3}
+    Price: 5
+    Description: Add 5 Ammo to current weapon.
+    isAmmo: 1
+    AmmoAmount: 5
+  shopItemPrefab: {fileID: 8807214391999047611, guid: 8bc4c99712142b74ca32dd1c9abe622e, type: 3}
+  shopPanel: {fileID: 403568814}
+  content: {fileID: 1900946946}
+  playerWeaponHandler: {fileID: 1143242506}
 --- !u!1 &1815732793
 GameObject:
   m_ObjectHideFlags: 0

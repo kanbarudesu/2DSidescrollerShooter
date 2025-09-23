@@ -23,6 +23,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject rightEnemyIndicator;
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button resumeButton;
+    [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button quitButton;
 
     [Header("GameoverUI")]
@@ -49,6 +50,11 @@ public class GameManager : Singleton<GameManager>
         pauseButton.onClick.AddListener(() => Time.timeScale = 0);
         resumeButton.onClick.AddListener(() => Time.timeScale = 1);
         quitButton.onClick.AddListener(() => Application.Quit());
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(0);
+        });
 
         spawner.OnWaveCleared.AddListener(EnableZone);
         playerHealth.OnDie.AddListener(OnPlayerDied);
@@ -72,7 +78,7 @@ public class GameManager : Singleton<GameManager>
     private void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Gameplay");
     }
 
     private void EnableZone()

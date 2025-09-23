@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class WeaponPickup : MonoBehaviour
 {
     [Header("Pickup Settings")]
-    [SerializeField] private GameObject weaponPrefab;
+    [SerializeField] private AssetReferenceGameObject weaponPrefab;
     [SerializeField] private bool autoPickup = false;
     [SerializeField] private KeyCode pickupButton = KeyCode.E;
 

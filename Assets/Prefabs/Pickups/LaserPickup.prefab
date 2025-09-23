@@ -222,7 +222,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ca89d197fb2a468b3e9dfb7624457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 9137443439808853504, guid: 4e5f926e9b9c19246836ad07bd07ed50, type: 3}
+  weaponPrefab:
+    m_AssetGUID: 4e5f926e9b9c19246836ad07bd07ed50
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   autoPickup: 0
   pickupButton: 101
   iconTransform: {fileID: 2282239456225894325}

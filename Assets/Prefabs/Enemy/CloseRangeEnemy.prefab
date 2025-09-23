@@ -332,17 +332,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPrefabs:
-  - pickupPrefab: {fileID: 3961149812240274773, guid: af072dd8679cee44f98a3e358a74f2d9, type: 3}
+  - pickupPrefab:
+      m_AssetGUID: af072dd8679cee44f98a3e358a74f2d9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     dropChance: 0.9
-  - pickupPrefab: {fileID: 7749383629284613345, guid: 4ea516f7a6dbf7b4ab643afee95b1fc5, type: 3}
+  - pickupPrefab:
+      m_AssetGUID: 4ea516f7a6dbf7b4ab643afee95b1fc5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     dropChance: 0.025
-  - pickupPrefab: {fileID: 8921705366468288012, guid: 5a86ceddac5b31c41874c6bda7c3ed4b, type: 3}
+  - pickupPrefab:
+      m_AssetGUID: 5a86ceddac5b31c41874c6bda7c3ed4b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     dropChance: 0.05
-  - pickupPrefab: {fileID: 5264292438037952286, guid: ee1879b8bcf444f48b7cc719100fae33, type: 3}
+  - pickupPrefab:
+      m_AssetGUID: ee1879b8bcf444f48b7cc719100fae33
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     dropChance: 0.05
-  - pickupPrefab: {fileID: 8706703966925963384, guid: 1fdf8b17f3c97ae498ad2ceb7b92e006, type: 3}
+  - pickupPrefab:
+      m_AssetGUID: 1fdf8b17f3c97ae498ad2ceb7b92e006
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     dropChance: 0.025
-  dropChance: 0.15
+  dropChance: 0.4
 --- !u!1 &3091310084688794505
 GameObject:
   m_ObjectHideFlags: 0

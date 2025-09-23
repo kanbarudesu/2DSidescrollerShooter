@@ -1,4 +1,7 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class PickupDrop : MonoBehaviour
 {
@@ -25,9 +28,20 @@ public class PickupDrop : MonoBehaviour
             cumulative += Mathf.Max(0f, data.dropChance);
             if (randomValue <= cumulative)
             {
-                Instantiate(data.pickupPrefab, transform.position, Quaternion.identity);
+                StartCoroutine(TryDropPickupRoutine(data.pickupPrefab));
                 break;
             }
+        }
+    }
+
+    private IEnumerator TryDropPickupRoutine(AssetReferenceGameObject pickupPrefab)
+    {
+        AsyncOperationHandle<GameObject> handle = pickupPrefab.InstantiateAsync(transform.position, Quaternion.identity);
+        yield return handle;
+
+        if (handle.Status == AsyncOperationStatus.Failed)
+        {
+            Debug.LogError($"Failed to load pickup: {pickupPrefab.RuntimeKey}");
         }
     }
 }
@@ -35,6 +49,6 @@ public class PickupDrop : MonoBehaviour
 [System.Serializable]
 public struct DropData
 {
-    public GameObject pickupPrefab;
+    public AssetReferenceGameObject pickupPrefab;
     [Range(0f, 1f)] public float dropChance;
 }

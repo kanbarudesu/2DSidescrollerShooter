@@ -80,8 +80,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         if (wave.EnemyAddresses == null || wave.EnemyAddresses.Length == 0) yield break;
 
-        AssetReferenceGameObject enemyRef =
-            wave.EnemyAddresses[Random.Range(0, wave.EnemyAddresses.Length)];
+        AssetReferenceGameObject enemyRef = wave.EnemyAddresses[Random.Range(0, wave.EnemyAddresses.Length)];
         Vector2 spawnPos = wave.SpawnRandomly ? GetRandomSpawnPosition() : GetSpawnPosition();
 
         var handle = enemyRef.InstantiateAsync(spawnPos, Quaternion.identity);

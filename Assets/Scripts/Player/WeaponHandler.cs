@@ -1,10 +1,13 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class WeaponHandler : MonoBehaviour
 {
     [Header("Initial Weapon")]
-    [SerializeField] private GameObject initialWeaponPrefab;
+    [SerializeField] private AssetReferenceGameObject initialWeaponPrefab;
     [SerializeField] private Transform weaponHolder;
 
     private WeaponBase currentWeapon;
@@ -43,17 +46,31 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
-    public void EquipWeapon(GameObject newWeaponPrefab)
+    public void EquipWeapon(AssetReferenceGameObject newWeaponPrefab)
     {
         if (newWeaponPrefab == null) return;
+        StartCoroutine(EquipWeaponRoutine(newWeaponPrefab));
+    }
+
+    private IEnumerator EquipWeaponRoutine(AssetReferenceGameObject newWeaponPrefab)
+    {
+        AsyncOperationHandle<GameObject> handle = newWeaponPrefab.InstantiateAsync(weaponHolder.position, weaponHolder.rotation, weaponHolder);
+        yield return handle;
+
+        if (handle.Status != AsyncOperationStatus.Succeeded)
+        {
+            Debug.LogError($"Failed to load weapon: {newWeaponPrefab.RuntimeKey}");
+            yield break;
+        }
 
         if (currentWeaponObj != null)
+        {
+            Addressables.ReleaseInstance(currentWeaponObj);
             Destroy(currentWeaponObj);
+        }
 
-        currentWeaponObj = Instantiate(newWeaponPrefab, weaponHolder.position, weaponHolder.rotation, weaponHolder);
-
-        currentWeapon = currentWeaponObj.GetComponent<WeaponBase>();
-        if (currentWeapon == null)
+        currentWeaponObj = handle.Result;
+        if (!currentWeaponObj.TryGetComponent(out currentWeapon))
         {
             Debug.LogError("Equipped weapon does not inherit WeaponBase!");
         }

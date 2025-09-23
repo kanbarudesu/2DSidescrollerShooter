@@ -238,7 +238,7 @@ MonoBehaviour:
   reloadTime: 1.5
   infiniteAmmo: 0
   autoReload: 1
-  fireRate: 0.5
+  fireRate: 0.75
   onReload:
     m_PersistentCalls:
       m_Calls:
@@ -284,7 +284,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  bulletPrefab: {fileID: 9035653994259952008, guid: bae35e49d3381ec4481e92554885ab12, type: 3}
+  bulletPrefab:
+    m_AssetGUID: bae35e49d3381ec4481e92554885ab12
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   firePoint: {fileID: 1066111078806743034}
   bulletCount: 6
   spreadAngle: 15

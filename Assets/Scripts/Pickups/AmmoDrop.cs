@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 public class AmmoDrop : MonoBehaviour
@@ -34,6 +35,7 @@ public class AmmoDrop : MonoBehaviour
             }
 
             onPickup.Invoke();
+            Addressables.ReleaseInstance(gameObject);
             Destroy(gameObject);
         }
     }

@@ -1,17 +1,33 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class GrenadeWeapon : WeaponBase
 {
     [Header("Grenade Settings")]
-    [SerializeField] private GameObject grenadePrefab;
+    [SerializeField] private AssetReferenceGameObject grenadePrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private float throwForce = 7f;
 
     protected override void PerformAttack(Transform playerTransform)
     {
         if (grenadePrefab == null || throwPoint == null) return;
+        StartCoroutine(TrySpawnGrenadeRoutine(playerTransform));
+    }
 
-        GameObject grenade = Instantiate(grenadePrefab, throwPoint.position, throwPoint.rotation);
+    private IEnumerator TrySpawnGrenadeRoutine(Transform playerTransform)
+    {
+        AsyncOperationHandle<GameObject> handle = grenadePrefab.InstantiateAsync(throwPoint.position, throwPoint.rotation);
+        yield return handle;
+
+        if (handle.Status == AsyncOperationStatus.Failed)
+        {
+            Debug.Log($"Failed to load grenade prefab: {grenadePrefab.RuntimeKey}");
+            yield break;
+        }
+
+        GameObject grenade = handle.Result;
         Rigidbody2D rb = grenade.GetComponent<Rigidbody2D>();
         if (rb != null)
         {

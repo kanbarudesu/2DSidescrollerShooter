@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Shotgun : WeaponBase
 {
     [Header("Shotgun Settings")]
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private AssetReferenceGameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private int bulletCount = 6;
     [SerializeField] private float spreadAngle = 15f;
@@ -19,21 +22,35 @@ public class Shotgun : WeaponBase
 
         for (int i = 0; i < bulletCount; i++)
         {
-            float angle = startAngle + angleStep * i;
-            Vector2 dir = Quaternion.Euler(0, 0, angle) * Vector2.right * playerTransform.localScale.x;
+            StartCoroutine(TrySpawnBulletRoutine(angleStep, startAngle, playerTransform, i));
+        }
+    }
 
-            GameObject projectileObj = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-            Rigidbody2D rb = projectileObj.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = dir.normalized * bulletSpeed;
-            }
+    private IEnumerator TrySpawnBulletRoutine(float angleStep, float startAngle, Transform playerTransform, int index)
+    {
+        AsyncOperationHandle<GameObject> handle = bulletPrefab.InstantiateAsync(firePoint.position, firePoint.rotation);
+        yield return handle;
 
-            Projectile projectile = projectileObj.GetComponent<Projectile>();
-            if (projectile != null)
-            {
-                projectile.SetDamage(bulletDamage);
-            }
+        if (handle.Status == AsyncOperationStatus.Failed)
+        {
+            Debug.Log($"Failed to load bullet: {bulletPrefab.RuntimeKey}");
+            yield break;
+        }
+
+        float angle = startAngle + angleStep * index;
+        Vector2 dir = Quaternion.Euler(0, 0, angle) * Vector2.right * playerTransform.localScale.x;
+
+        GameObject projectileObj = handle.Result;
+        Rigidbody2D rb = projectileObj.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = dir.normalized * bulletSpeed;
+        }
+
+        Projectile projectile = projectileObj.GetComponent<Projectile>();
+        if (projectile != null)
+        {
+            projectile.SetDamage(bulletDamage);
         }
     }
 }

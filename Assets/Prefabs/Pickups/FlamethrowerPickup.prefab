@@ -270,7 +270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ca89d197fb2a468b3e9dfb7624457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 1214397365514932313, guid: c91b2c1332072054f88edfc43a0c4284, type: 3}
+  weaponPrefab:
+    m_AssetGUID: c91b2c1332072054f88edfc43a0c4284
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   autoPickup: 0
   pickupButton: 101
   iconTransform: {fileID: 7776849495411641992}

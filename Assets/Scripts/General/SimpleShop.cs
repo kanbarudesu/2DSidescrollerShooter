@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class SimpleShop : MonoBehaviour
 {
@@ -22,13 +23,13 @@ public class SimpleShop : MonoBehaviour
     public void OpenShop()
     {
         Time.timeScale = 0;
-        shopPanel.gameObject.SetActive(true);
+        shopPanel.SetActive(true);
     }
 
     public void CloseShop()
     {
         Time.timeScale = 1;
-        shopPanel.gameObject.SetActive(false);
+        shopPanel.SetActive(false);
     }
 
     private void OnBuyItem(ShopItemData data)
@@ -46,7 +47,7 @@ public class SimpleShop : MonoBehaviour
 [System.Serializable]
 public class ShopItemData
 {
-    public GameObject Prefab;
+    public AssetReferenceGameObject Prefab;
     public Sprite Icon;
     public int Price;
     public string Description;

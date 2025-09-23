@@ -1,4 +1,7 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class RangedEnemy : EnemyBase
 {
@@ -7,7 +10,7 @@ public class RangedEnemy : EnemyBase
     [SerializeField] private float repositionInterval = 3f;
     [SerializeField] private float arriveThreshold = 0.2f;
     [SerializeField] private float shootInterval = 1f;
-    [SerializeField] private GameObject[] weaponPrefabs;
+    [SerializeField] private AssetReferenceGameObject[] weaponPrefabs;
     [SerializeField] private Transform weaponHolder;
 
     [Header("Ground Check")]
@@ -25,15 +28,38 @@ public class RangedEnemy : EnemyBase
     {
         base.Awake();
         TryChooseNewPosition();
-        InitializeWeapon();
         shootTimer = shootInterval;
+    }
+
+    private void Start()
+    {
+        InitializeWeapon();
     }
 
     private void InitializeWeapon()
     {
         if (weaponPrefabs == null || weaponHolder == null) return;
         var randomWeapon = weaponPrefabs[Random.Range(0, weaponPrefabs.Length)];
-        weapon = Instantiate(randomWeapon, weaponHolder.position, weaponHolder.rotation, weaponHolder).GetComponent<WeaponBase>();
+        StartCoroutine(InitializeWeaponRoutine(randomWeapon));
+    }
+
+    private IEnumerator InitializeWeaponRoutine(AssetReferenceGameObject weaponPrefab)
+    {
+        AsyncOperationHandle<GameObject> handle = weaponPrefab.InstantiateAsync(weaponHolder.position, weaponHolder.rotation, weaponHolder);
+        yield return handle;
+
+        if (handle.Status == AsyncOperationStatus.Failed)
+        {
+            Debug.Log($"Failed to load weapon: {weaponPrefab.RuntimeKey} for {gameObject.name}");
+            yield break;
+        }
+        weapon = handle.Result.GetComponent<WeaponBase>();
+    }
+
+    private void OnDestroy()
+    {
+        if (weapon != null)
+            Addressables.ReleaseInstance(weapon.gameObject);
     }
 
     protected override void HandleMovement()
@@ -112,7 +138,7 @@ public class RangedEnemy : EnemyBase
 
     private void Shoot()
     {
-        if (weaponPrefabs == null) return;
+        if (weapon == null) return;
         weapon.Fire(transform);
     }
 

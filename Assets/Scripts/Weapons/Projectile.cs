@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Projectile : MonoBehaviour
 {
@@ -9,7 +10,13 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, lifeTime);
+        Invoke(nameof(DelayDestroy), lifeTime);
+    }
+
+    private void DelayDestroy()
+    {
+        Addressables.ReleaseInstance(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +29,7 @@ public class Projectile : MonoBehaviour
                 targetHealth.TakeDamage(damage);
             }
 
+            Addressables.ReleaseInstance(gameObject);
             Destroy(gameObject);
         }
     }

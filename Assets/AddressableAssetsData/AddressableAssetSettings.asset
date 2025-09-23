@@ -101,6 +101,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - GameplayAssets
+    - LocalAssets
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: b6ebe1d9bee1d444389d1afc81fe0918, type: 2}

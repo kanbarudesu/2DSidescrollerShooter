@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: infiniteAmmo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3544643773226527102, guid: 900a2374c3e509746b35f541f5890740, type: 3}
+      propertyPath: bulletPrefab.m_AssetGUID
+      value: 1c115c91d845c004fae91ba23d844a51
+      objectReference: {fileID: 0}
     - target: {fileID: 7453956891877381263, guid: 900a2374c3e509746b35f541f5890740, type: 3}
       propertyPath: m_Name
       value: EnemyShotgun

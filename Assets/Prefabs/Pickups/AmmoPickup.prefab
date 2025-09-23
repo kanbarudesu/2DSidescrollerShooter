@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1327431ce60b15546b249a415b137107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmounts: 050000000a0000000f00000014000000
+  ammoAmounts: 01000000020000000400000006000000
   onPickup:
     m_PersistentCalls:
       m_Calls:

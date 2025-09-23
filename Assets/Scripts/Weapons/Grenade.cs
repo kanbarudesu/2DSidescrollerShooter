@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
 public class Grenade : MonoBehaviour
@@ -44,6 +45,7 @@ public class Grenade : MonoBehaviour
         }
 
         onExplode.Invoke();
+        Addressables.ReleaseInstance(gameObject);
         Destroy(gameObject);
     }
 

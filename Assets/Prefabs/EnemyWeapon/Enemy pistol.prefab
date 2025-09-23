@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: infiniteAmmo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8264554989992209464, guid: d6467961b55e69946a87a51234d49e35, type: 3}
+      propertyPath: bulletPrefab.m_AssetGUID
+      value: 1c115c91d845c004fae91ba23d844a51
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
