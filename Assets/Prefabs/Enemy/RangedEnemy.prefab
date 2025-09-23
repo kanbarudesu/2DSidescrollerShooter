@@ -451,28 +451,28 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    dropChance: 0.025
+    dropChance: 0.1
   - pickupPrefab:
       m_AssetGUID: 5a86ceddac5b31c41874c6bda7c3ed4b
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    dropChance: 0.05
+    dropChance: 0.1
   - pickupPrefab:
       m_AssetGUID: ee1879b8bcf444f48b7cc719100fae33
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    dropChance: 0.05
+    dropChance: 0.1
   - pickupPrefab:
       m_AssetGUID: 1fdf8b17f3c97ae498ad2ceb7b92e006
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    dropChance: 0.025
+    dropChance: 0.1
   dropChance: 0.4
 --- !u!1 &6248474927767436885
 GameObject:

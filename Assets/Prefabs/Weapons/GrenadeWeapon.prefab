@@ -148,7 +148,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  grenadePrefab: {fileID: 181418557376714824, guid: 3658bef0272445745ad705036b61490a, type: 3}
+  grenadePrefab:
+    m_AssetGUID: 3658bef0272445745ad705036b61490a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   throwPoint: {fileID: 7621808945177276094}
   throwForce: 25
 --- !u!1 &4504311563828968294
