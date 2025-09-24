@@ -5840,7 +5840,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1814574527}
         m_TargetAssemblyTypeName: SimpleShop, Assembly-CSharp
         m_MethodName: CloseShop
         m_Mode: 1
@@ -11419,7 +11419,7 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1814574527}
         m_TargetAssemblyTypeName: SimpleShop, Assembly-CSharp
         m_MethodName: OpenShop
         m_Mode: 1

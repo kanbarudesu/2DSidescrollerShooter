@@ -55,7 +55,7 @@ public class WeaponHandler : MonoBehaviour
 
     private IEnumerator EquipWeaponRoutine(AssetReferenceGameObject newWeaponPrefab)
     {
-        AsyncOperationHandle<GameObject> handle = newWeaponPrefab.InstantiateAsync(Vector3.zero, Quaternion.identity, weaponHolder);
+        AsyncOperationHandle<GameObject> handle = newWeaponPrefab.InstantiateAsync(weaponHolder.position, Quaternion.identity, weaponHolder);
         yield return handle;
 
         if (handle.Status != AsyncOperationStatus.Succeeded)
