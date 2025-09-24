@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 public class AddressableBootstrap : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class AddressableBootstrap : MonoBehaviour
     private bool baseHasUpdate = false;
     private long baseDownloadSize = 0;
 
-    private readonly Dictionary<string, string> discoveredDLC = new Dictionary<string, string>();
+    private readonly HashSet<string> discoveredDLC = new HashSet<string>();
 
     private IEnumerator Start()
     {
@@ -64,13 +65,12 @@ public class AddressableBootstrap : MonoBehaviour
                 string keyStr = key.ToString();
                 if (keyStr.StartsWith("DLC"))
                 {
-                    if (!discoveredDLC.ContainsKey(keyStr))
-                        discoveredDLC.Add(keyStr, null);
+                    discoveredDLC.Add(keyStr);
                 }
             }
         }
 
-        foreach (var dlc in discoveredDLC.Keys)
+        foreach (var dlc in discoveredDLC)
             yield return DiscoverSceneAndCreateButtons(dlc);
 
         menuCanvasGroup.interactable = true;
@@ -84,7 +84,6 @@ public class AddressableBootstrap : MonoBehaviour
         if (locationHandle.Status == AsyncOperationStatus.Succeeded && locationHandle.Result.Count > 0)
         {
             string sceneKey = locationHandle.Result[0].PrimaryKey;
-            discoveredDLC[label] = sceneKey;
 
             var sizeHandle = Addressables.GetDownloadSizeAsync(label);
             yield return sizeHandle;
