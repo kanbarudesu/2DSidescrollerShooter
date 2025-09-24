@@ -1,18 +1,12 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-
-[System.Serializable]
-public struct DlcData
-{
-    public string label;
-    public string sceneName;
-    public Button button;
-}
+using System.Collections.Generic;
 
 public class AddressableBootstrap : MonoBehaviour
 {
@@ -23,13 +17,13 @@ public class AddressableBootstrap : MonoBehaviour
     [SerializeField] private TMP_Text logText;
     [SerializeField] private CanvasGroup menuCanvasGroup;
 
-    [Header("DLC UI")]
-    [SerializeField] private DlcData dlc1Data;
-    [SerializeField] private DlcData dlc2Data;
+    [Header("Dynamic DLC UI")]
+    [SerializeField] private Transform dlcButtonContainer;
+    [SerializeField] private Button dlcButtonPrefab;
     [SerializeField] private Transform levelButtonContainer;
     [SerializeField] private Button levelButtonPrefab;
 
-    [Header("Main Scene Settings")]
+    [Header("Base Game Settings")]
     [SerializeField] private string nextScene = "Gameplay";
     [SerializeField] private string baseLabel = "default";
     [SerializeField] private float loadingDelay = 1f;
@@ -37,11 +31,7 @@ public class AddressableBootstrap : MonoBehaviour
     private bool baseHasUpdate = false;
     private long baseDownloadSize = 0;
 
-    private void Awake()
-    {
-        dlc1Data.button.onClick.AddListener(() => StartCoroutine(DownloadDlcRoutine(dlc1Data)));
-        dlc2Data.button.onClick.AddListener(() => StartCoroutine(DownloadDlcRoutine(dlc2Data)));
-    }
+    private readonly Dictionary<string, string> discoveredDLC = new Dictionary<string, string>();
 
     private IEnumerator Start()
     {
@@ -54,6 +44,7 @@ public class AddressableBootstrap : MonoBehaviour
             var updateHandle = Addressables.UpdateCatalogs(checkHandle.Result);
             yield return updateHandle;
             Addressables.Release(updateHandle);
+            Debug.Log("Catalog updated.");
         }
         Addressables.Release(checkHandle);
 
@@ -66,23 +57,88 @@ public class AddressableBootstrap : MonoBehaviour
         }
         Addressables.Release(sizeHandle);
 
-        yield return CheckDlcCached(dlc1Data);
-        yield return CheckDlcCached(dlc2Data);
+        foreach (var locator in Addressables.ResourceLocators)
+        {
+            foreach (var key in locator.Keys)
+            {
+                string keyStr = key.ToString();
+                if (keyStr.StartsWith("DLC"))
+                {
+                    if (!discoveredDLC.ContainsKey(keyStr))
+                        discoveredDLC.Add(keyStr, null);
+                }
+            }
+        }
+
+        foreach (var dlc in discoveredDLC.Keys)
+            yield return DiscoverSceneAndCreateButtons(dlc);
 
         menuCanvasGroup.interactable = true;
     }
 
-    private IEnumerator CheckDlcCached(DlcData dlcData)
+    private IEnumerator DiscoverSceneAndCreateButtons(string label)
     {
-        var sizeHandle = Addressables.GetDownloadSizeAsync(dlcData.label);
-        yield return sizeHandle;
-        if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0)
+        var locationHandle = Addressables.LoadResourceLocationsAsync(label, typeof(SceneInstance));
+        yield return locationHandle;
+
+        if (locationHandle.Status == AsyncOperationStatus.Succeeded && locationHandle.Result.Count > 0)
         {
-            if (dlcData.button.TryGetComponent(out Button button))
-                button.interactable = false;
-            AddLevelButton(dlcData);
+            string sceneKey = locationHandle.Result[0].PrimaryKey;
+            discoveredDLC[label] = sceneKey;
+
+            var sizeHandle = Addressables.GetDownloadSizeAsync(label);
+            yield return sizeHandle;
+            bool alreadyCached = sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0;
+            Addressables.Release(sizeHandle);
+
+            if (alreadyCached)
+                AddLevelButton(sceneKey, label);
+            else
+                AddDownloadButton(label, sceneKey);
+        }
+        Addressables.Release(locationHandle);
+    }
+
+    private void AddDownloadButton(string label, string sceneKey)
+    {
+        Button btn = Instantiate(dlcButtonPrefab, dlcButtonContainer);
+        btn.GetComponentInChildren<TMP_Text>().text = $"Get {label}";
+        btn.onClick.AddListener(() => StartCoroutine(DownloadDlcRoutine(label, sceneKey, btn)));
+    }
+
+    private IEnumerator DownloadDlcRoutine(string label, string sceneKey, Button dlcButton)
+    {
+        loadingPanel.SetActive(true);
+
+        var sizeHandle = Addressables.GetDownloadSizeAsync(label);
+        yield return sizeHandle;
+
+        if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result > 0)
+        {
+            var downloadHandle = Addressables.DownloadDependenciesAsync(label, true);
+            while (!downloadHandle.IsDone)
+            {
+                float p = downloadHandle.PercentComplete;
+                progressBar.value = p;
+                progressText.text = $"Downloading {label} {p:P0}";
+                yield return null;
+            }
         }
         Addressables.Release(sizeHandle);
+
+        yield return new WaitForSeconds(loadingDelay);
+        loadingPanel.SetActive(false);
+
+        dlcButton.interactable = false;
+        AddLevelButton(sceneKey, label);
+        Log($"{label} downloaded.");
+    }
+
+    private void AddLevelButton(string sceneKey, string label)
+    {
+        Button newBtn = Instantiate(levelButtonPrefab, levelButtonContainer);
+        newBtn.GetComponentInChildren<TMP_Text>().text = $"Play {label}";
+        newBtn.onClick.AddListener(() => StartCoroutine(LoadSceneRoutine(sceneKey)));
     }
 
     public void LoadGameplayScene()
@@ -142,44 +198,6 @@ public class AddressableBootstrap : MonoBehaviour
         baseHasUpdate = false;
         loadingPanel.SetActive(false);
         Log("Base download complete.");
-    }
-
-    private IEnumerator DownloadDlcRoutine(DlcData dlcData)
-    {
-        loadingPanel.SetActive(true);
-        var sizeHandle = Addressables.GetDownloadSizeAsync(dlcData.label);
-        yield return sizeHandle;
-
-        if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result > 0)
-        {
-            var downloadHandle = Addressables.DownloadDependenciesAsync(dlcData.label, true);
-            while (!downloadHandle.IsDone)
-            {
-                float p = downloadHandle.PercentComplete;
-                progressBar.value = p;
-                progressText.text = $"Downloading {dlcData.label} {p:P0}";
-                yield return null;
-            }
-        }
-        Addressables.Release(sizeHandle);
-
-        yield return new WaitForSeconds(loadingDelay);
-        loadingPanel.SetActive(false);
-
-        if (dlcData.button.TryGetComponent(out Button button))
-            button.interactable = false;
-        AddLevelButton(dlcData);
-        Log($"{dlcData.label} downloaded.");
-    }
-
-    private void AddLevelButton(DlcData dlcData)
-    {
-        Button newBtn = Instantiate(levelButtonPrefab, levelButtonContainer);
-        newBtn.GetComponentInChildren<TMP_Text>().text = dlcData.sceneName;
-        newBtn.onClick.AddListener(() =>
-        {
-            StartCoroutine(LoadSceneRoutine(dlcData.sceneName));
-        });
     }
 
     private void Log(string msg)

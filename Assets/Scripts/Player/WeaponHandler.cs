@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;
@@ -54,7 +55,7 @@ public class WeaponHandler : MonoBehaviour
 
     private IEnumerator EquipWeaponRoutine(AssetReferenceGameObject newWeaponPrefab)
     {
-        AsyncOperationHandle<GameObject> handle = newWeaponPrefab.InstantiateAsync(weaponHolder.position, weaponHolder.rotation, weaponHolder);
+        AsyncOperationHandle<GameObject> handle = newWeaponPrefab.InstantiateAsync(Vector3.zero, Quaternion.identity, weaponHolder);
         yield return handle;
 
         if (handle.Status != AsyncOperationStatus.Succeeded)
