@@ -75,12 +75,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - GameplayAssets
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c91b2c1332072054f88edfc43a0c4284
-    m_Address: Assets/Prefabs/Weapons/Flamethrower.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - GameplayAssets
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d6467961b55e69946a87a51234d49e35
     m_Address: Assets/Prefabs/Weapons/Pistol
     m_ReadOnly: 0
