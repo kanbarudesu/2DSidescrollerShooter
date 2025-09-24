@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea69d41f90c6ea4fa55c27c1d60c145, type: 3}
-  m_Name: AddressableAssetGroupSortSettings
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: DLC 1_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  sortOrder:
-  - 0e5bcd59d5b28d141b716559a4ae2d9c
-  - 874c4bdf9df49114ba4531991fba059b
-  - 2bd5ef0675a316f43a21e757d735d491
-  - c9faa6fb72114f64bab046d3d0db3e47
+  m_Group: {fileID: 11400000, guid: 0979332513a0c5f4ebda9c77ce787aed, type: 2}
+  m_StaticContent: 0

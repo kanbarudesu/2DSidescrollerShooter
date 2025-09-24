@@ -78,7 +78,7 @@ public class GameManager : Singleton<GameManager>
     private void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void EnableZone()
