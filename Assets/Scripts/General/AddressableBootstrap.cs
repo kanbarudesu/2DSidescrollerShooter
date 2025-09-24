@@ -42,7 +42,7 @@ public class AddressableBootstrap : MonoBehaviour
         yield return checkHandle;
         if (checkHandle.Status == AsyncOperationStatus.Succeeded && checkHandle.Result.Count > 0)
         {
-            var updateHandle = Addressables.UpdateCatalogs(checkHandle.Result);
+            var updateHandle = Addressables.UpdateCatalogs(checkHandle.Result, false);
             yield return updateHandle;
             Addressables.Release(updateHandle);
             Debug.Log("Catalog updated.");
