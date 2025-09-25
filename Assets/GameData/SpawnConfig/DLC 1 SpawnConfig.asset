@@ -19,8 +19,8 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    SpawnCount: 6
-    SpawnInterval: 0.1
+    SpawnCount: 9
+    SpawnInterval: 0.8
     SpawnRandomly: 0
   - EnemyAddresses:
     - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e

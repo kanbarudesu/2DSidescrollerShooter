@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01bc41ff2534156419a6a34856f7bd52
+    m_Address: Assets/Sprites/LineGradient.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d1a2656f3a3b654ba2a6bacde296b58
     m_Address: Assets/Sprites/CircleAlpha.png
     m_ReadOnly: 0
@@ -61,8 +66,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - DropConfigs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82d7594518ccc124e9e91dd8327a20c1
+    m_Address: Assets/Audio/reload 1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97cfc5948fcf9b2499fe916e3fb78b04
     m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c4acad080a84cf46bba19691c6bc709
+    m_Address: Assets/Audio/empty ammo 2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a694f2f172c3b7d4ebc1d624ffad2e7b
+    m_Address: Assets/Audio/reload 2.mp3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -87,8 +107,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - ShopConfigs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd95733045fb23347ab506dc60ce750d
+    m_Address: Assets/Audio/empty ammo 1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e260cfa7296ee7642b167f1eb5be5023
     m_Address: Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e73bffa35fa193c48b64c8e0eb4a56a7
+    m_Address: Assets/Friction.physicsMaterial2D
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
