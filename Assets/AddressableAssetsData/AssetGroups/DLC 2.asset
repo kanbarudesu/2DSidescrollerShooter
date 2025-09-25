@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DLC 2
+  m_EditorClassIdentifier: 
+  m_GroupName: DLC 2
+  m_GUID: cf57a97cfa117444ba5d26244fcfa514
+  m_SerializeEntries:
+  - m_GUID: 3d1d81491b359d54c932da737093b986
+    m_Address: Assets/GameData/DropConfig/DLC 2 Drop Config.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DLC 2
+    - DropConfigs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e5f926e9b9c19246836ad07bd07ed50
+    m_Address: Assets/Prefabs/Weapons/LaserWeapon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DLC 2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ea516f7a6dbf7b4ab643afee95b1fc5
+    m_Address: Assets/Prefabs/Pickups/LaserPickup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DLC 2
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85bf819b97152e94791f37ab8c5a3156
+    m_Address: Assets/GameData/ShopConfig/DLC 2 Shop Config.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DLC 2
+    - ShopConfigs
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 96c5b243cc956734fba462d63c5f303e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3ebf1c7b14d6708458db2973d55ff2d5, type: 2}
+    - {fileID: 11400000, guid: 08eaf763fe3cb4847ae6986192f3f02e, type: 2}
