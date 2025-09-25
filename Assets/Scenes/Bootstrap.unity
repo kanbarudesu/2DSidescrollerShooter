@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select Level
+  m_text: Start Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8889036353b7914eafe0870c262a3fc, type: 2}
   m_sharedMaterial: {fileID: 877572336021636690, guid: b8889036353b7914eafe0870c262a3fc, type: 2}
