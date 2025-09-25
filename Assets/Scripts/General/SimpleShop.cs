@@ -19,6 +19,7 @@ public class SimpleShop : MonoBehaviour
     {
         var handle = Addressables.LoadAssetsAsync<ShopConfig>(shopConfigLabel, config =>
         {
+            Debug.Log(config.Items.Length);
             allConfigs.Add(config);
         });
         yield return handle;
