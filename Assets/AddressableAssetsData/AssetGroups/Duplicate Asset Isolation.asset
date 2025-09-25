@@ -1,0 +1,538 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation
+  m_GUID: e121a57b9544b02409ec953eab31853a
+  m_SerializeEntries:
+  - m_GUID: 00ada72adf563cc4898e79e7d2e09ae4
+    m_Address: Assets/Material/Sprite Unlit.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01243df4a21a8354c957b1e97f481310
+    m_Address: Assets/Sprites/smoke_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b4d2c1911f495346a074734f027838a
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/bear.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d1a2656f3a3b654ba2a6bacde296b58
+    m_Address: Assets/Sprites/CircleAlpha.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e5f5adfa6606ff468ba3dd6d42b1395
+    m_Address: Assets/Sprites/free-guns-pixel-art/grenade launcher.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12bf5ad59be0d334abfa8e5d3345143e
+    m_Address: Assets/Sprites/Box_Blank_Rounded.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 141863881ca9e6346ad8a1a9ae80226f
+    m_Address: Assets/Sprites/free-guns-pixel-art/SMG-3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 152e532c8819ff4479401f16267bc60f
+    m_Address: Assets/Sprites/Square.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1977f74a3b2cdf04289aec46d51d7e6c
+    m_Address: Assets/Sprites/free-guns-pixel-art/Grenade-3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e30931356a85334bb01c1cad0dee53f
+    m_Address: Assets/Sprites/free-guns-pixel-art/Shotgun-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 201af0704ee9586438438cf1c5df064b
+    m_Address: Assets/Sprites/Icon_Small_Blank_X.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 219c02c5a4198be41a6b5667b8018970
+    m_Address: Assets/Sprites/Icon_Small_Blank_AudioOff.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2324a6f40b4102e45a0002d167853373
+    m_Address: Assets/Sprites/free-guns-pixel-art/RPG-reisized.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 263aed1ef154c2d4bb711cec0fa3fa6f
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo7.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26e3c867fe0051747b7d15d41a9972c7
+    m_Address: Assets/Sprites/UI.spriteatlasv2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a3114c2fe88b2a41b980832ba3d50d9
+    m_Address: Assets/Audio/Take Damage 3.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b4603277bc92244fbb6d83dd89819cd
+    m_Address: Assets/Audio/Take Damage 2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bb49fcbde5a48e469d23cd56f497e79
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/moose.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3380857d88214674cb5c218c09db900e
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34455fbb89df0e246b8238c5e35fa712
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38ebe0ad6ef1f5a47b810f00a509fd62
+    m_Address: Assets/Sprites/free-guns-pixel-art/Spritesheet.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3dc5263f931b2f9409e49a06890b47b1
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41db90fb694f06642a20f9ae12d99854
+    m_Address: Assets/Sprites/Icon_Small_Blank_Help.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4306ff50c91bd96419b2e0c309b0f8d5
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-3-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45e60cd270cac954088aae553f951a95
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 464f92a03cb806e4a99a592a27c8014a
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/monkey.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b6e734c00247a24bad925dd96c70298
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d1a0dec307d6c94ab4accd83047d58f
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/rabbit.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 505e12a052c1bcb4fba678db7f674bf6
+    m_Address: Assets/Sprites/free-guns-pixel-art/SMG-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50e279c10981da4488eb95a3fd9f14a8
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54ceb787f8a66064683de56403f83e15
+    m_Address: Assets/Sprites/free-guns-pixel-art/Shotgun-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d5b9cf1f26b2bf42aa7aa4505798e33
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/chicken.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6653f3e0bf9022742b649f664b42c14f
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-3-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b5cda80e788fc348862446b22315c38
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6df6e2e6d8577214cb6ab10b6c34f515
+    m_Address: Assets/Sprites/free-guns-pixel-art/Shotgun-4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f9e5fcf6363a9447b22d63f0c1e179c
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/giraffe.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70b7c150c4f0900488cb66884d422a82
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/duck.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 720ba9f3c24490a43ade988557dc95c7
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo5.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 741145babd7c8d74ea029835982800cb
+    m_Address: Assets/Sprites/free-guns-pixel-art/Shotgun-3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7997639d72168f544abc694663290fe1
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/parrot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c1c598151570ba47b79a5522683cc45
+    m_Address: Assets/Sprites/free-guns-pixel-art/Bazooka-reisized.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80903ab2e1fce524296218407a81f9be
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/elephant.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82d7594518ccc124e9e91dd8327a20c1
+    m_Address: Assets/Audio/reload 1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83bc22dde4ad0fe4c968e0e332285392
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-4-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87334a1d26ebc7b4d88588fead0b4d38
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/frog.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b9487249d15c734d8eb976a6cbdf228
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/penguin.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d0074c7e1f2b5e47a037fd89259e9c8
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/zebra.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90acb0100a37cb345a50dc65eff0f040
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/whale.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 962201554b2ec104a8c39ebb814e8eb7
+    m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9685d05f15a69e043a96ee538dc72fe9
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/horse.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97cfc5948fcf9b2499fe916e3fb78b04
+    m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c4acad080a84cf46bba19691c6bc709
+    m_Address: Assets/Audio/empty ammo 2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cc41c7720e6e234e9ccac9337abe6af
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a235a9d0f7b7b014f9fc98b9074d1331
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/walrus.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2cd357ea1847474aab9b73bb5f8a19b
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-1-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a362553a906f691439957e2ab5626e31
+    m_Address: Assets/Sprites/free-guns-pixel-art/Bazooka.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4626fbc86d693642926333e6d004618
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
+    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acf1607a6b41ce54c96aab7c2adc9145
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round.spriteatlasv2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af6e49e451909734f8790cbd5cc96443
+    m_Address: Assets/Sprites/Icon_Small_Blank_Audio.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2f6d6cc2a266884b96bfa04ef385099
+    m_Address: Assets/Audio/Take damage 1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b34a9222eae3d8c4bb1a550f43c1c06b
+    m_Address: Assets/Sprites/Icon_Small_Blank_Pause.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b35d444528e9afe46880f304f826b627
+    m_Address: Assets/Material/Smoke.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3bfd98428e2e1e44be4fffe28c1f348
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/snake.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7320c51ee1b7734b89d0d4b2ff2a4e8
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/chick.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b85cc4cd245ee7c42b7b9ee18d54cda7
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/sloth.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9184f4bd1fa08140833021953a4d8e0
+    m_Address: Assets/Sprites/Icon_Small_Coin.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9fd601fddbb37545bd98e7ec0a8b535
+    m_Address: Assets/Sprites/free-guns-pixel-art/AmoB1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba63f5e8b7d33ec45b465dc6440238f5
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/crocodile.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd5aa0924570878408e6f3dce3952f42
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0ae1ba0b4050064ba1efddc0b1ba638
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-1-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c62fe11b5b583a544a90cb64bdc3c801
+    m_Address: Assets/Sprites/free-guns-pixel-art/RPG.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6b6f99b637e2e64db9fefcbbe6581e1
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/cow.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7c2e2ae097e3c349b6715fd655130c4
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-2-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: caac78d88dc0b1645b5c1569a3726224
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-4-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd21f56a11a9ff8409fdd2f3a55ea202
+    m_Address: Assets/Sprites/free-guns-pixel-art/SMG-4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cda4da7451c60364bb60bf02d2d5af77
+    m_Address: Assets/Sprites/free-guns-pixel-art/SMG-5.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2cfde555d75fe94ba98a9660d99ac79
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/hippo.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d64d110e10e067f4eb9c5f47c9c3f7cb
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/panda.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7c792845254d0741aef7c64e37d0044
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/gorilla.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7ce71b9442c23a478c178cc257dfc6d
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo6.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7eecb4c0991e35458cd465c144d0275
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/buffalo.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9875ee2b18d74740aa2bd68ffad91a9
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/goat.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db1b40a6a438cad488ed94af8460904f
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/narwhal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db78574574f8b404ab7dfdfe6754ca25
+    m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-5.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd5557ed31b6b7443a0b62f6ac7f46ef
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/rhino.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd91b5a2fbcd5ff4d8626bf31fce1824
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo8.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd95733045fb23347ab506dc60ce750d
+    m_Address: Assets/Audio/empty ammo 1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddc524856f02b394f8ac3c008ef69997
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/pig.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddc5631e12ccebc4b8b38d2db8171087
+    m_Address: Assets/Sprites/free-guns-pixel-art/SMG-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e260cfa7296ee7642b167f1eb5be5023
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3685276defad2e41bac8fe5d73a8e75
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-2-scoped.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4958ff0d74c4d0478bd4aaecf46aae0
+    m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4f43667bf32ec241a866c8431878883
+    m_Address: Assets/Sprites/free-guns-pixel-art/Sniper-rifle-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e73bffa35fa193c48b64c8e0eb4a56a7
+    m_Address: Assets/Friction.physicsMaterial2D
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e81fd5db46db9584092a52eff548311f
+    m_Address: Assets/Sprites/free-guns-pixel-art/AmoB2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3662f23e0512fd41aefbbfc6cc17e82
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/owl.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f579e9e1c347ec840a28805523385050
+    m_Address: Assets/Prefabs/Particles/Smokes.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f613b97ec31c42f46948df0ebf8289ea
+    m_Address: Assets/Sprites/kenney_animal-pack-redux/Round (outline)/dog.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0b8c3ce1899f94986c7f93b66d393a
+    m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc2acf28e0c3e5b4f87441506861a277
+    m_Address: Assets/Sprites/free-guns-pixel-art/Grenade-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: feeb100a99ab069468691a5276019956
+    m_Address: Assets/Sprites/free-guns-pixel-art/Grenade-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff33ed04f22ca7a4eac657da696ba15c
+    m_Address: Assets/Sprites/free-guns-pixel-art/Assaut-rifle-3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 96c5b243cc956734fba462d63c5f303e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c2260bfc5dc7aad4f9f5c9ec33aaf503, type: 2}
+    - {fileID: 11400000, guid: 17a49c4d46834cf4cb14c09564f93093, type: 2}
