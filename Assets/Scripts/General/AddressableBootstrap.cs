@@ -38,6 +38,8 @@ public class AddressableBootstrap : MonoBehaviour
     {
         menuCanvasGroup.interactable = false;
 
+        yield return Addressables.InitializeAsync();
+
         var checkHandle = Addressables.CheckForCatalogUpdates(false);
         yield return checkHandle;
         if (checkHandle.Status == AsyncOperationStatus.Succeeded && checkHandle.Result.Count > 0)
