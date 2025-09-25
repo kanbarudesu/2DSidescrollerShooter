@@ -1,21 +1,44 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class PickupDrop : MonoBehaviour
 {
-    [SerializeField] private DropData[] pickupPrefabs;
+    [SerializeField] private string dropConfigLabel = "DropConfigs";
     [SerializeField, Range(0f, 1f)] private float dropChance = 0.5f;
+
+    private readonly List<DropConfig> allConfigs = new List<DropConfig>();
+    private List<DropData> mergedDropData = new List<DropData>();
+
+    private IEnumerator Start()
+    {
+        var handle = Addressables.LoadAssetsAsync<DropConfig>(dropConfigLabel, config =>
+        {
+            allConfigs.Add(config);
+        });
+        yield return handle;
+
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            foreach (var config in allConfigs)
+                mergedDropData.AddRange(config.DropsData);
+        }
+        else
+        {
+            Debug.LogError("Failed to load DropConfig!");
+        }
+    }
 
     public void DropPickup()
     {
-        if (pickupPrefabs == null || pickupPrefabs.Length == 0) return;
+        if (mergedDropData.Count == 0) return;
 
         if (Random.value > dropChance) return;
 
         float totalWeight = 0f;
-        foreach (var data in pickupPrefabs)
+        foreach (var data in mergedDropData)
             totalWeight += Mathf.Max(0f, data.dropChance);
 
         if (totalWeight <= 0f) return;
@@ -23,7 +46,7 @@ public class PickupDrop : MonoBehaviour
         float randomValue = Random.value * totalWeight;
         float cumulative = 0f;
 
-        foreach (var data in pickupPrefabs)
+        foreach (var data in mergedDropData)
         {
             cumulative += Mathf.Max(0f, data.dropChance);
             if (randomValue <= cumulative)

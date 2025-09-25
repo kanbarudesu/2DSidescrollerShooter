@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Local Group
+  m_GUID: f9c1e01dc0858dc488590c9dfe0d9c7a
+  m_SerializeEntries:
+  - m_GUID: 00ada72adf563cc4898e79e7d2e09ae4
+    m_Address: Assets/Material/Sprite Unlit.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01243df4a21a8354c957b1e97f481310
+    m_Address: Assets/Sprites/smoke_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d1a2656f3a3b654ba2a6bacde296b58
+    m_Address: Assets/Sprites/CircleAlpha.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 152e532c8819ff4479401f16267bc60f
+    m_Address: Assets/Sprites/Square.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a3114c2fe88b2a41b980832ba3d50d9
+    m_Address: Assets/Audio/Take Damage 3.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b4603277bc92244fbb6d83dd89819cd
+    m_Address: Assets/Audio/Take Damage 2.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3dc5263f931b2f9409e49a06890b47b1
+    m_Address: Assets/Sprites/free-guns-pixel-art/Amo1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6df6e2e6d8577214cb6ab10b6c34f515
+    m_Address: Assets/Sprites/free-guns-pixel-art/Shotgun-4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f645b9024c48a04d80c5534681dbe9a
+    m_Address: Assets/GameData/DropConfig/BaseDropConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - DropConfigs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97cfc5948fcf9b2499fe916e3fb78b04
+    m_Address: Assets/Sprites/free-guns-pixel-art/Pistol-1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
+    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2f6d6cc2a266884b96bfa04ef385099
+    m_Address: Assets/Audio/Take damage 1.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b35d444528e9afe46880f304f826b627
+    m_Address: Assets/Material/Smoke.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3517e600bc4d9544aac6249f89b2b1d
+    m_Address: Assets/GameData/Base Shop Config.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ShopConfigs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e260cfa7296ee7642b167f1eb5be5023
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f464bb88081a95542b049519b865477c
+    m_Address: Assets/GameData/Base Spawn Config.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnConfigs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f579e9e1c347ec840a28805523385050
+    m_Address: Assets/Prefabs/Particles/Smokes.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc2acf28e0c3e5b4f87441506861a277
+    m_Address: Assets/Sprites/free-guns-pixel-art/Grenade-2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 96c5b243cc956734fba462d63c5f303e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c2260bfc5dc7aad4f9f5c9ec33aaf503, type: 2}
+    - {fileID: 11400000, guid: 17a49c4d46834cf4cb14c09564f93093, type: 2}

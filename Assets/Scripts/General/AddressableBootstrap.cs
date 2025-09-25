@@ -73,9 +73,21 @@ public class AddressableBootstrap : MonoBehaviour
         }
 
         foreach (var dlc in discoveredDLC)
-            yield return DiscoverSceneAndCreateButtons(dlc);
+            yield return DiscoverDLCAndCreateButtons(dlc);
 
         menuCanvasGroup.interactable = true;
+    }
+
+    private IEnumerator DiscoverDLCAndCreateButtons(string label)
+    {
+        var sizeHandle = Addressables.GetDownloadSizeAsync(label);
+        yield return sizeHandle;
+
+        bool alreadyCached = sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0;
+        Addressables.Release(sizeHandle);
+
+        if (!alreadyCached)
+            AddDownloadButton(label, "");
     }
 
     private IEnumerator DiscoverSceneAndCreateButtons(string label)
@@ -130,8 +142,8 @@ public class AddressableBootstrap : MonoBehaviour
         yield return new WaitForSeconds(loadingDelay);
         loadingPanel.SetActive(false);
 
-        dlcButton.interactable = false;
-        AddLevelButton(sceneKey, label);
+        dlcButton.gameObject.SetActive(false);
+        // AddLevelButton(sceneKey, label);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

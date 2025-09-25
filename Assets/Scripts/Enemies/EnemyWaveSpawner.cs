@@ -1,29 +1,23 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.Events;
-using ImprovedTimers;
-using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Events;
+using ImprovedTimers;
 
 public class EnemyWaveSpawner : MonoBehaviour
 {
-    [System.Serializable]
-    public struct WaveData
-    {
-        [Tooltip("Addressable enemy prefab references")]
-        public AssetReferenceGameObject[] EnemyAddresses;
-        public int SpawnCount;
-        public float SpawnInterval;
-        public bool SpawnRandomly;
-    }
-
-    [SerializeField] private WaveData[] waves;
+    [Header("Config")]
+    [SerializeField] private string spawnConfigLabel = "SpawnConfigs";
     [SerializeField] private float waveInterval = 5f;
     [SerializeField] private Collider2D groundArea;
 
     private Camera mainCamera;
-    private CountdownTimer waveCleartimer;
+    private CountdownTimer waveClearTimer;
+
+    private readonly List<SpawnConfig> allConfigs = new List<SpawnConfig>();
+    private List<WaveData> mergedWaves = new List<WaveData>();
 
     public int CurrentWave = 1;
     public int EnemyCount { get; private set; }
@@ -31,37 +25,57 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     public UnityEvent OnWaveCleared;
 
-    private void Start()
+    private IEnumerator Start()
     {
         if (mainCamera == null)
             mainCamera = Camera.main;
 
-        waveCleartimer = new CountdownTimer(3);
-        waveCleartimer.OnTimerStop += () =>
+        waveClearTimer = new CountdownTimer(3);
+        waveClearTimer.OnTimerStop += () =>
         {
             CurrentWave++;
             OnWaveCleared?.Invoke();
         };
+
+        var handle = Addressables.LoadAssetsAsync<SpawnConfig>(spawnConfigLabel, config =>
+        {
+            allConfigs.Add(config);
+        });
+        yield return handle;
+
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            foreach (var config in allConfigs)
+                mergedWaves.AddRange(config.Waves);
+        }
+        else
+        {
+            Debug.LogError("Failed to load SpawnConfigs!");
+        }
     }
 
     private void Update()
     {
-        if (waveCleartimer.IsRunning && EnemyCount > 0)
-            waveCleartimer.Stop();
+        if (waveClearTimer.IsRunning && EnemyCount > 0)
+            waveClearTimer.Stop();
     }
 
     public void SpawnRandomWave(int waveAmount = 1)
     {
+        if (mergedWaves.Count == 0)
+        {
+            Debug.LogWarning("No waves available!");
+            return;
+        }
         StartCoroutine(SpawnIntervalRoutine(waveAmount));
     }
 
-    private IEnumerator SpawnIntervalRoutine(int waveAmount = 1)
+    private IEnumerator SpawnIntervalRoutine(int waveAmount)
     {
         for (int w = 0; w < waveAmount; w++)
         {
-            int waveIndex = Random.Range(0, waves.Length);
-
-            yield return StartCoroutine(SpawnWave(waves[waveIndex]));
+            int waveIndex = Random.Range(0, mergedWaves.Count);
+            yield return StartCoroutine(SpawnWave(mergedWaves[waveIndex]));
             yield return new WaitForSeconds(waveInterval);
         }
     }
@@ -78,10 +92,12 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemy(WaveData wave)
     {
-        if (wave.EnemyAddresses == null || wave.EnemyAddresses.Length == 0) yield break;
+        if (wave.EnemyAddresses == null || wave.EnemyAddresses.Length == 0)
+            yield break;
 
-        AssetReferenceGameObject enemyRef = wave.EnemyAddresses[Random.Range(0, wave.EnemyAddresses.Length)];
-        Vector2 spawnPos = wave.SpawnRandomly ? GetRandomSpawnPosition() : GetSpawnPosition();
+        AssetReferenceGameObject enemyRef =
+            wave.EnemyAddresses[Random.Range(0, wave.EnemyAddresses.Length)];
+        Vector2 spawnPos = wave.SpawnRandomly ? GetRandomSpawnPosition() : GetEdgeSpawnPosition();
 
         var handle = enemyRef.InstantiateAsync(spawnPos, Quaternion.identity);
         yield return handle;
@@ -98,7 +114,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Failed to load enemy: {enemyRef.RuntimeKey}");
+            Debug.LogError($"Failed to spawn enemy: {enemyRef.RuntimeKey}");
         }
     }
 
@@ -106,29 +122,26 @@ public class EnemyWaveSpawner : MonoBehaviour
     {
         EnemyCount--;
         ActiveEnemies.Remove(enemy);
-
         Addressables.ReleaseInstance(enemy);
 
         if (EnemyCount <= 0)
-        {
-            waveCleartimer.Start();
-        }
+            waveClearTimer.Start();
     }
 
-    private Vector2 GetSpawnPosition()
+    private Vector2 GetEdgeSpawnPosition()
     {
         Vector3 camPos = mainCamera.transform.position;
         float camHeight = 2f * mainCamera.orthographicSize;
         float camWidth = camHeight * mainCamera.aspect;
 
-        float x = (Random.value < 0.5f) ? camPos.x - camWidth / 2f - 1f : camPos.x + camWidth / 2f + 1f;
+        float x = (Random.value < 0.5f)
+            ? camPos.x - camWidth / 2f - 1f
+            : camPos.x + camWidth / 2f + 1f;
 
         Bounds groundBounds = groundArea.bounds;
-        float yMin = groundBounds.min.y;
-        float yMax = groundBounds.max.y;
-        float y = Random.Range(yMin, yMax);
+        float y = Random.Range(groundBounds.min.y, groundBounds.max.y);
 
-        return new Vector2(x, Mathf.Clamp(y, yMin, yMax));
+        return new Vector2(x, Mathf.Clamp(y, groundBounds.min.y, groundBounds.max.y));
     }
 
     private Vector2 GetRandomSpawnPosition()

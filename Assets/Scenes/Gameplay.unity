@@ -1154,39 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105e43b50344e674d8f3e737c7833f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - EnemyAddresses:
-    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    SpawnCount: 3
-    SpawnInterval: 0.2
-    SpawnRandomly: 0
-  - EnemyAddresses:
-    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    SpawnCount: 3
-    SpawnInterval: 0.2
-    SpawnRandomly: 0
-  - EnemyAddresses:
-    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    SpawnCount: 6
-    SpawnInterval: 0.2
-    SpawnRandomly: 0
+  spawnConfigLabel: SpawnConfigs
   waveInterval: 1.5
   groundArea: {fileID: 947439074}
   CurrentWave: 1
@@ -17126,51 +17094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a9e3f34075ce74788e0344e6dff327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items:
-  - Prefab:
-      m_AssetGUID: d6467961b55e69946a87a51234d49e35
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    Icon: {fileID: -7919881095202910414, guid: 97cfc5948fcf9b2499fe916e3fb78b04, type: 3}
-    Price: 15
-    Description: Basic Pistol that deals 15 damage per bullet.
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab:
-      m_AssetGUID: 5028b811590e8d840843391cc149921b
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    Icon: {fileID: -4483239912571855695, guid: fc2acf28e0c3e5b4f87441506861a277, type: 3}
-    Price: 50
-    Description: Grenade that deals 25 AoE damage to the enemies.
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab:
-      m_AssetGUID: 900a2374c3e509746b35f541f5890740
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    Icon: {fileID: -6822918150057805834, guid: 6df6e2e6d8577214cb6ab10b6c34f515, type: 3}
-    Price: 100
-    Description: Shotgun that shoot multiple bullet that deals 6 damage each.
-    isAmmo: 0
-    AmmoAmount: 0
-  - Prefab:
-      m_AssetGUID: 
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    Icon: {fileID: -8690472570865122384, guid: 3dc5263f931b2f9409e49a06890b47b1, type: 3}
-    Price: 5
-    Description: Add 5 Ammo to current weapon.
-    isAmmo: 1
-    AmmoAmount: 5
+  shopConfigLabel: ShopConfigs
   shopItemPrefab: {fileID: 8807214391999047611, guid: 8bc4c99712142b74ca32dd1c9abe622e, type: 3}
   shopPanel: {fileID: 403568814}
   content: {fileID: 1900946946}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd2b87519822764ba145911d3ffa2a2, type: 3}
+  m_Name: Base Shop Config
+  m_EditorClassIdentifier: 
+  Items:
+  - Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -8690472570865122384, guid: 3dc5263f931b2f9409e49a06890b47b1, type: 3}
+    Price: 5
+    Description: Add 5 Ammo to current weapon.
+    isAmmo: 1
+    AmmoAmount: 5
+  - Prefab:
+      m_AssetGUID: d6467961b55e69946a87a51234d49e35
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -7919881095202910414, guid: 97cfc5948fcf9b2499fe916e3fb78b04, type: 3}
+    Price: 15
+    Description: Basic Pistol that deals 15 damage per bullet.
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: 5028b811590e8d840843391cc149921b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -4483239912571855695, guid: fc2acf28e0c3e5b4f87441506861a277, type: 3}
+    Price: 50
+    Description: Grenade that deals 25 AoE damage to the enemies.
+    isAmmo: 0
+    AmmoAmount: 0
+  - Prefab:
+      m_AssetGUID: 900a2374c3e509746b35f541f5890740
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    Icon: {fileID: -6822918150057805834, guid: 6df6e2e6d8577214cb6ab10b6c34f515, type: 3}
+    Price: 100
+    Description: Shotgun that shoot multiple bullet that deals 6 damage each.
+    isAmmo: 0
+    AmmoAmount: 0

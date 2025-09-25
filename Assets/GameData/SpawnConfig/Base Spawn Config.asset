@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772a2a603f3ed564294be0efe093bbfc, type: 3}
+  m_Name: Base Spawn Config
+  m_EditorClassIdentifier: 
+  Waves:
+  - EnemyAddresses:
+    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    SpawnCount: 4
+    SpawnInterval: 0.1
+    SpawnRandomly: 0
+  - EnemyAddresses:
+    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    SpawnCount: 4
+    SpawnInterval: 0.1
+    SpawnRandomly: 0
+  - EnemyAddresses:
+    - m_AssetGUID: 689ba190780516d42ac72ab9b842cc4e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 895a29526b09d6b4fb7182c5f903a39d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    SpawnCount: 6
+    SpawnInterval: 0.1
+    SpawnRandomly: 0

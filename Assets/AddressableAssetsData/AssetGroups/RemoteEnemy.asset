@@ -39,8 +39,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - GameplayAssets
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a86ceddac5b31c41874c6bda7c3ed4b
+    m_Address: Assets/Prefabs/Pickups/ShotgunPickup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 689ba190780516d42ac72ab9b842cc4e
     m_Address: Assets/Prefabs/Enemy/CloseRangeEnemy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7aa950e54fe92f04288f29cc079fb8f2
+    m_Address: Assets/Prefabs/Pickups/PistolPickup.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - GameplayAssets
@@ -69,6 +81,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - GameplayAssets
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af072dd8679cee44f98a3e358a74f2d9
+    m_Address: Assets/Prefabs/Pickups/AmmoPickup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bae35e49d3381ec4481e92554885ab12
     m_Address: Assets/Prefabs/Weapons/Projectile
     m_ReadOnly: 0
@@ -77,6 +95,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d6467961b55e69946a87a51234d49e35
     m_Address: Assets/Prefabs/Weapons/Pistol
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameplayAssets
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee1879b8bcf444f48b7cc719100fae33
+    m_Address: Assets/Prefabs/Pickups/GrenadePickup.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - GameplayAssets
