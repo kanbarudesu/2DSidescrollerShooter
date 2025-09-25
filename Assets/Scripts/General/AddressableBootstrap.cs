@@ -130,7 +130,8 @@ public class AddressableBootstrap : MonoBehaviour
 
         dlcButton.interactable = false;
         AddLevelButton(sceneKey, label);
-        Log($"{label} downloaded.");
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void AddLevelButton(string sceneKey, string label)
