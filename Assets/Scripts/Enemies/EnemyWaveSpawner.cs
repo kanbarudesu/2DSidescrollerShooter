@@ -16,8 +16,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     private Camera mainCamera;
     private CountdownTimer waveClearTimer;
 
-    private readonly List<SpawnConfig> allConfigs = new List<SpawnConfig>();
     private List<WaveData> mergedWaves = new List<WaveData>();
+    private List<string> dlcLabels = new List<string>();
 
     public int CurrentWave = 1;
     public int EnemyCount { get; private set; }
@@ -37,20 +37,57 @@ public class EnemyWaveSpawner : MonoBehaviour
             OnWaveCleared?.Invoke();
         };
 
+        DiscoverDlcLabels();
         var handle = Addressables.LoadAssetsAsync<SpawnConfig>(spawnConfigLabel, config =>
         {
-            allConfigs.Add(config);
+            mergedWaves.AddRange(config.Waves);
         });
         yield return handle;
 
-        if (handle.Status == AsyncOperationStatus.Succeeded)
-        {
-            foreach (var config in allConfigs)
-                mergedWaves.AddRange(config.Waves);
-        }
-        else
+        if (handle.Status == AsyncOperationStatus.Failed)
         {
             Debug.LogError("Failed to load SpawnConfigs!");
+        }
+
+        yield return LoadDlcConfigsRoutine();
+    }
+
+    private void DiscoverDlcLabels()
+    {
+        foreach (var locator in Addressables.ResourceLocators)
+        {
+            foreach (var key in locator.Keys)
+            {
+                string keyStr = key.ToString();
+                if (keyStr.StartsWith("DLC"))
+                {
+                    dlcLabels.Add(keyStr);
+                }
+            }
+        }
+    }
+
+    private IEnumerator LoadDlcConfigsRoutine()
+    {
+        foreach (var dlcLabel in dlcLabels)
+        {
+            var sizeHandle = Addressables.GetDownloadSizeAsync(dlcLabel);
+            yield return sizeHandle;
+
+            if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0)
+            {
+                var handle = Addressables.LoadAssetsAsync<SpawnConfig>(dlcLabel, config =>
+                {
+                    mergedWaves.AddRange(config.Waves);
+                });
+                yield return handle;
+                Debug.Log($"Loaded SpawnConfig DLC: {dlcLabel}");
+            }
+            else
+            {
+                Debug.Log($"SpawnConfig DLC : {dlcLabel} not cached.");
+            }
+            Addressables.Release(sizeHandle);
         }
     }
 

@@ -18,7 +18,7 @@ public class SimpleShop : MonoBehaviour
 
     private IEnumerator Start()
     {
-        DiscoverDlcLabelsRoutine();
+        DiscoverDlcLabels();
         var handle = Addressables.LoadAssetsAsync<ShopConfig>(shopConfigLabel, config =>
         {
             mergedShopItems.AddRange(config.Items);
@@ -35,7 +35,7 @@ public class SimpleShop : MonoBehaviour
         InitializeShopItems();
     }
 
-    private void DiscoverDlcLabelsRoutine()
+    private void DiscoverDlcLabels()
     {
         foreach (var locator in Addressables.ResourceLocators)
         {
@@ -64,11 +64,11 @@ public class SimpleShop : MonoBehaviour
                     mergedShopItems.AddRange(config.Items);
                 });
                 yield return handle;
-                Debug.Log($"Loaded DLC: {dlcLabel}");
+                Debug.Log($"Loaded ShopConfig DLC: {dlcLabel}");
             }
             else
             {
-                Debug.Log($"DLC {dlcLabel} not cached.");
+                Debug.Log($"ShopConfig DLC : {dlcLabel} not cached.");
             }
             Addressables.Release(sizeHandle);
         }
