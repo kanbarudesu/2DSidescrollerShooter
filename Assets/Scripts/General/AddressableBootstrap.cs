@@ -67,7 +67,6 @@ public class AddressableBootstrap : MonoBehaviour
                 string keyStr = key.ToString();
                 if (keyStr.StartsWith("DLC"))
                 {
-                    Debug.Log($"Discovered DLC: {keyStr}");
                     discoveredDLC.Add(keyStr);
                 }
             }
@@ -85,6 +84,7 @@ public class AddressableBootstrap : MonoBehaviour
         yield return sizeHandle;
 
         bool alreadyCached = sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0;
+        Debug.Log($"Discovered DLC: {label} has no update : {alreadyCached}");
         Addressables.Release(sizeHandle);
 
         if (!alreadyCached)
