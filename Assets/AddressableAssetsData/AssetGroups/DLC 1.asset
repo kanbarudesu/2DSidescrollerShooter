@@ -32,14 +32,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - DLC 1
-    - ShopConfigs
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bc63f92a0dff9ba408e64e1c48b9d74f
     m_Address: Assets/GameData/DropConfig/DLC 1 Drop Config.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - DLC 1
-    - DropConfigs
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c91b2c1332072054f88edfc43a0c4284
     m_Address: Assets/Prefabs/Weapons/Flamethrower.prefab
@@ -52,7 +50,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - DLC 1
-    - SpawnConfigs
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 96c5b243cc956734fba462d63c5f303e, type: 2}
