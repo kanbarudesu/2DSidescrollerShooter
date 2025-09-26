@@ -76,9 +76,10 @@ public class EnemyWaveSpawner : MonoBehaviour
 
             if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0)
             {
-                var handle = Addressables.LoadAssetsAsync<SpawnConfig>(dlcLabel, config =>
+                var handle = Addressables.LoadAssetsAsync<object>(dlcLabel, obj =>
                 {
-                    mergedWaves.AddRange(config.Waves);
+                    if (obj is SpawnConfig config)
+                        mergedWaves.AddRange(config.Waves);
                 });
                 yield return handle;
                 Debug.Log($"Loaded SpawnConfig DLC: {dlcLabel}");

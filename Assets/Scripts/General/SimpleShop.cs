@@ -59,9 +59,10 @@ public class SimpleShop : MonoBehaviour
 
             if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0)
             {
-                var handle = Addressables.LoadAssetsAsync<ShopConfig>(dlcLabel, config =>
+                var handle = Addressables.LoadAssetsAsync<object>(dlcLabel, obj =>
                 {
-                    mergedShopItems.AddRange(config.Items);
+                    if (obj is ShopConfig config)
+                        mergedShopItems.AddRange(config.Items);
                 });
                 yield return handle;
                 Debug.Log($"Loaded ShopConfig DLC: {dlcLabel}");

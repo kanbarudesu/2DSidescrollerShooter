@@ -53,9 +53,10 @@ public class PickupDrop : MonoBehaviour
 
             if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0)
             {
-                var handle = Addressables.LoadAssetsAsync<DropConfig>(dlcLabel, config =>
+                var handle = Addressables.LoadAssetsAsync<object>(dlcLabel, obj =>
                 {
-                    mergedDropData.AddRange(config.DropsData);
+                    if (obj is DropConfig config)
+                        mergedDropData.AddRange(config.DropsData);
                 });
                 yield return handle;
                 Debug.Log($"Loaded DropConfig DLC: {dlcLabel}");
