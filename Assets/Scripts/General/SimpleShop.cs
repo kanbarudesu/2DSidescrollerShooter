@@ -14,26 +14,63 @@ public class SimpleShop : MonoBehaviour
 
     private readonly List<ShopConfig> allConfigs = new List<ShopConfig>();
     private List<ShopItemData> mergedShopItems = new List<ShopItemData>();
+    private List<string> dlcLabels = new List<string>();
 
     private IEnumerator Start()
     {
+        DiscoverDlcLabelsRoutine();
         var handle = Addressables.LoadAssetsAsync<ShopConfig>(shopConfigLabel, config =>
         {
-            allConfigs.Add(config);
+            mergedShopItems.AddRange(config.Items);
         });
         yield return handle;
 
-        if (handle.Status == AsyncOperationStatus.Succeeded)
-        {
-            foreach (var config in allConfigs)
-                mergedShopItems.AddRange(config.Items);
-
-            yield return null;
-            InitializeShopItems();
-        }
-        else
+        if (handle.Status == AsyncOperationStatus.Failed)
         {
             Debug.LogError("Failed to load ShopConfig!");
+        }
+
+        yield return LoadDlcConfigsRoutine();
+        yield return null;
+        InitializeShopItems();
+    }
+
+    private void DiscoverDlcLabelsRoutine()
+    {
+        foreach (var locator in Addressables.ResourceLocators)
+        {
+            foreach (var key in locator.Keys)
+            {
+                string keyStr = key.ToString();
+                if (keyStr.StartsWith("DLC"))
+                {
+                    dlcLabels.Add(keyStr);
+                }
+            }
+        }
+    }
+
+    private IEnumerator LoadDlcConfigsRoutine()
+    {
+        foreach (var dlcLabel in dlcLabels)
+        {
+            var sizeHandle = Addressables.GetDownloadSizeAsync(dlcLabel);
+            yield return sizeHandle;
+
+            if (sizeHandle.Status == AsyncOperationStatus.Succeeded && sizeHandle.Result == 0)
+            {
+                var handle = Addressables.LoadAssetsAsync<ShopConfig>(dlcLabel, config =>
+                {
+                    mergedShopItems.AddRange(config.Items);
+                });
+                yield return handle;
+                Debug.Log($"Loaded DLC: {dlcLabel}");
+            }
+            else
+            {
+                Debug.Log($"DLC {dlcLabel} not cached.");
+            }
+            Addressables.Release(sizeHandle);
         }
     }
 

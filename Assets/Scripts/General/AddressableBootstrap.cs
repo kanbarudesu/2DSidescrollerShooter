@@ -67,6 +67,7 @@ public class AddressableBootstrap : MonoBehaviour
                 string keyStr = key.ToString();
                 if (keyStr.StartsWith("DLC"))
                 {
+                    Debug.Log($"Discovered DLC: {keyStr}");
                     discoveredDLC.Add(keyStr);
                 }
             }
